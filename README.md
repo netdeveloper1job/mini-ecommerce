@@ -5,6 +5,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 First, run the development server:
 
 ```bash
+npm install
 npm run dev
 # or
 yarn dev
@@ -42,11 +43,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/b
 
 ## Approach
 First, I created a Next.js project using the command line. For styling and responsive design, I integrated Bootstrap.
-
 After that, I fetched the product list from the Fake Store API and displayed it in the application. When a user clicks on Add to Cart, the item gets added to the cart, and the header shows a cart icon with a count that updates dynamically.
-
 I also implemented a Cart page, where all the selected products are displayed along with their quantity. Each product has plus and minus buttons, so the user can increase or decrease the quantity. There is also a remove option to delete the product from the cart.
-
 Additionally, I configured toast notifications so that whenever a product is added or removed, the user gets instant feedback.
 
 ## References
