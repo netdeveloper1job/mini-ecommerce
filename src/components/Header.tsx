@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { useCart } from "@/context/CartContext";
-import styles  from "@/styles/header.module.css";
+import styles  from "@/styles/Header.module.css";
 export default function Header() {
   const { cart } = useCart();
 
