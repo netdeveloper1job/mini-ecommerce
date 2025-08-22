@@ -3,7 +3,7 @@ import styles from "@/styles/product-list.module.css";
 import { Product } from "@/interfaces/product";
 import { useCart } from "@/context/CartContext";
 import toast from "react-hot-toast";
-import { FaBeer, FaTrash } from "react-icons/fa";
+import {  FaTrash } from "react-icons/fa";
 export default function ProductList() {
     const [products, setProducts] = useState<Product[]>([]);
     const [category, setCategory] = useState<string>("all");
@@ -63,7 +63,9 @@ export default function ProductList() {
                                     <h5 className={styles.productTitle} title={p.title}>{p.title}</h5>
                                     <p>{p.category}</p>
                                     <p title={p.description} className={styles.productDescription}> {p.description} </p>
-                                    <p><strong>${p.price}</strong></p>
+                                  <p className="text-end">
+                                    <strong>${(p.price * (cartItem?.quantity || 1)).toFixed(2)}</strong>
+                                    </p>
                                     {cartItem ? (<div className="d-flex align-items-center justify-content-between gap-3">
                                         <div className="d-flex justify-content-between align-items-center border w-100 h-auto">
                                             <button className="btn btn-outline-primary btn-sm" onClick={() => { removeParticularCart(p.id); toast.success(`${p.title} Removed from cart`); }}>
@@ -74,7 +76,7 @@ export default function ProductList() {
                                                 +
                                             </button>
                                         </div>
-                                        <div role="button" onClick={() => { removeFromCart(p.id); toast.success(`${p.title} Removed from cart`); }}><FaTrash className="text-danger" size={24} /></div>
+                                        <div className="d-flex" role="button" onClick={() => { removeFromCart(p.id); toast.success(`${p.title} Removed from cart`); }}><FaTrash className="text-danger" size={24} /></div>
                                     </div>)
                                         :
                                         (
