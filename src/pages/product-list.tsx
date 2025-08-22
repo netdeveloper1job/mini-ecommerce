@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "@/styles/product-list.module.css";
+import styles from "@/styles/Product-List.module.css";
 import { Product } from "@/interfaces/product";
 import { useCart } from "@/context/CartContext";
 import toast from "react-hot-toast";
@@ -53,19 +53,20 @@ export default function ProductList() {
                     const cartItem = cart.find((item) => item.id === p.id);
                     return (
                         <div className="col-md-3 mb-3" key={p.id}>
-                            <div className="card p-3 shadow-sm h-100">
+                            <div role="button" className="card p-3 shadow-sm h-100">
                                 <img
                                     src={p.image}
                                     alt={p.title}
                                     className={styles.productImage}
                                 />
                                 <div className="card-body">
-                                    <h5 className={styles.productTitle}>{p.title}</h5>
+                                    <h5 className={styles.productTitle} title={p.title}>{p.title}</h5>
                                     <p>{p.category}</p>
+                                    <p title={p.description} className={styles.productDescription}> {p.description} </p>
                                     <p><strong>${p.price}</strong></p>
                                     {cartItem ? (<div className="d-flex align-items-center justify-content-between gap-3">
                                         <div className="d-flex justify-content-between align-items-center border w-100 h-auto">
-                                            <button className="btn btn-outline-primary btn-sm" onClick={() => { removeFromCart(p.id); toast.success(`${p.title} Removed from cart`); }}>
+                                            <button className="btn btn-outline-primary btn-sm" onClick={() => { removeParticularCart(p.id); toast.success(`${p.title} Removed from cart`); }}>
                                                 -
                                             </button>
                                             <span>{cartItem.quantity}</span>
