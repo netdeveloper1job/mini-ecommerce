@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "@/styles/Product-List.module.css";
+import styles from "@/styles/product-list.module.css";
 import { Product } from "@/interfaces/product";
 import { useCart } from "@/context/CartContext";
 import toast from "react-hot-toast";

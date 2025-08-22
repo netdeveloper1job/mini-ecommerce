@@ -1,5 +1,5 @@
 import { useCart } from "@/context/CartContext";
-import styles from "@/styles/Cart.module.css";
+import styles from "@/styles/cart.module.css";
 import Link from "next/link";
 import { FaArrowLeft, FaTrash } from "react-icons/fa";
 import toast from "react-hot-toast";
