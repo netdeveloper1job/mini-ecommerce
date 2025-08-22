@@ -52,7 +52,7 @@ export default function ProductList() {
                 {filteredProducts.map((p) => {
                     const cartItem = cart.find((item) => item.id === p.id);
                     return (
-                        <div className="col-md-4 mb-3" key={p.id}>
+                        <div className="col-md-3 mb-3" key={p.id}>
                             <div className="card p-3 shadow-sm h-100">
                                 <img
                                     src={p.image}

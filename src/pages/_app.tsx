@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <CartProvider>
       <Header/>
       <Component {...pageProps} />
-       <Toaster position="top-right" toastOptions={{ duration: 2000 }} />
+       <Toaster position="bottom-right" toastOptions={{ duration: 1000 }} />
     </CartProvider>
   );
 }
