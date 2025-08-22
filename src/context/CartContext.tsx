@@ -10,6 +10,7 @@ interface CartContextType {
   cart: CartItem[];
   addToCart: (product: Product) => void;
   removeFromCart: (id: number) => void;
+  removeParticularCart: (id: number) => void;
   clearCart: () => void;
 }
 
@@ -47,16 +48,31 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setCart((prev) => prev.filter((item) => item.id !== id));
   };
 
+const removeParticularCart = (id: number) => {
+  setCart((prev) => {
+    return prev
+      .map((item) => {
+        if (item.id === id) {
+          const newQty = item.quantity - 1;
+          return newQty > 0 ? { ...item, quantity: newQty } : null;
+        }
+        return item;
+      })
+      .filter((item): item is CartItem => item !== null); 
+  });
+};
+
+
   const clearCart = () => setCart([]);
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart,removeParticularCart, clearCart }}>
       {children}
     </CartContext.Provider>
   );
 };
 
-export const useCart = () => {
+export const  useCart = () => {
   const context = useContext(CartContext);
   if (!context) throw new Error("useCart must be used inside CartProvider");
   return context;

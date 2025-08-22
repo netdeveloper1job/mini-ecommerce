@@ -38,3 +38,25 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+
+
+## References
+## Fake Store API
+
+The product listing data is fetched from the Fake Store API:
+👉 https://fakestoreapi.com/docs#tag/Products/operation/getAllProducts
+
+## Bootstrap Configuration in Next.js
+
+For styling and responsive layout, Bootstrap 5 is used. Learn how to configure it in Next.js here:
+👉 https://blog.logrocket.com/handling-bootstrap-integration-next-js
+
+##  React Hot Toast
+
+For user interactions such as Add to Cart, Remove, and Checkout notifications, React Hot Toast is integrated:
+👉 https://www.npmjs.com/package/react-hot-toast
+
+## React Icons
+
+For icons like Cart, Trash, and Categories, the React Icons library is used:
+👉 https://www.npmjs.com/package/react-icons
